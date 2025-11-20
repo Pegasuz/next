@@ -8,11 +8,11 @@ export class CreateExampleDto {
   @IsString()
   @IsNotEmpty()
   @MaxLength(100)
-  name: string;
+  name!: string;
 }
 
 export class ExampleResponseDto {
-  id: string;
-  name: string;
-  createdAt: Date;
+  id!: string;
+  name!: string;
+  createdAt!: Date;
 }

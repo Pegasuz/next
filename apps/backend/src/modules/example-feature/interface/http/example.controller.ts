@@ -2,7 +2,7 @@
  * HTTP Controller - REST API Entry Point
  */
 
-import { Controller, Get, Post, Body, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, NotFoundException } from '@nestjs/common';
 import { CommandBus, QueryBus } from '@nestjs/cqrs';
 import { CreateExampleCommand } from '../../application/commands/create-example.command';
 import { GetExampleQuery } from '../../application/queries/get-example.query';
@@ -29,11 +29,11 @@ export class ExampleController {
   }
 
   @Get(':id')
-  async getById(@Param('id') id: string): Promise<ExampleResponseDto | null> {
+  async getById(@Param('id') id: string): Promise<ExampleResponseDto> {
     const entity = await this.queryBus.execute(new GetExampleQuery(id));
 
     if (!entity) {
-      return null;
+      throw new NotFoundException(`Example with id ${id} not found`);
     }
 
     return {

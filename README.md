@@ -168,6 +168,8 @@ For detailed database setup and management, see [DOCKER.md](DOCKER.md).
 
 ## 🏛️ Architectural Principles
 
+> **Project Constitution**: All architectural principles are formally defined in [`.specify/memory/constitution.md`](.specify/memory/constitution.md). This constitution is the authoritative source for all architecture decisions and must be followed for all new code.
+
 ### 1. Domain-Driven Design (DDD)
 
 The backend follows DDD principles with clear bounded contexts:
@@ -261,17 +263,20 @@ cp apps/frontend/.env.local.example apps/frontend/.env.local
 
 ## 📚 Documentation
 
+- [**Project Constitution**](.specify/memory/constitution.md) - **Authoritative architectural principles**
 - [Backend README](apps/backend/README.md) - Detailed backend architecture
 - [Frontend README](apps/frontend/README.md) - Frontend structure and patterns
 - [Architecture Guidelines](.github/copilot-instructions.md) - Coding standards
 
 ## 🤝 Contributing
 
-1. Follow the established architectural patterns
-2. Maintain strict TypeScript typing (no `any`)
-3. Keep domain layer pure (no framework dependencies)
-4. Write tests for new features
-5. Run linters before committing
+1. **Read the [Project Constitution](.specify/memory/constitution.md)** - All contributions must comply
+2. Follow the established architectural patterns (DDD, CQRS, vertical slices)
+3. Maintain strict TypeScript typing (no `any`)
+4. Keep domain layer pure (no framework dependencies)
+5. Write tests for new features
+6. Run linters before committing
+7. Ensure all constitution principles are followed
 
 ## 📝 License
 

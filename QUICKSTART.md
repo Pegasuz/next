@@ -132,6 +132,7 @@ npm run lint             # Lint
 ## Next Steps
 
 1. **Read the Documentation**:
+   - [**Project Constitution**](.specify/memory/constitution.md) - **Required reading: Architectural principles**
    - [Main README](README.md) - Architecture overview
    - [Backend README](apps/backend/README.md) - DDD & CQRS patterns
    - [Frontend README](apps/frontend/README.md) - Next.js structure
